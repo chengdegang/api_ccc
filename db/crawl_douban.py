@@ -17,8 +17,10 @@ def get_url():
                              'Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0'}
     data = requests.get(url, headers=headers).text
     s = etree.HTML(data)
-    name = s.xpath('//*[@id="app"]/div/div[1]/div[3]/a[1]/div')
-    print(name)
+    name = s.xpath('//*[@id="db-nav-movie"]/div[2]/div/ul/li[8]/a/text()')
+    name2 = s.xpath('//*[@id="app"]/div/div[1]/div[3]/a[1]/p/span[1]')
+    # name3 = s.xpath('//*[@id="app"]/div/div[1]/div[3]/a[2]/p/span[1]/text()')
+    print(name2)
 
 """
 获取如href="https://movie.douban.com/subject/35356779/"后单个的名称获取函数,传入列表处理所有url并取需要的数据
@@ -37,5 +39,5 @@ def douban_d(urls):
         names.append(name)
     print(names)
 
-# get_url()
-douban_d(listurl)
+get_url()
+# douban_d(listurl)
