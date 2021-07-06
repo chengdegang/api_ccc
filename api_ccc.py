@@ -14,11 +14,12 @@ def post_cloud(ip,url,protobufEncodingData,imageEncodingData):
     }
 }
     req = requests.post(url, json=data)
-    # print(req.json())
+    print(req.json())
     return req.json()
 
 def protobufEncodingData_deal():
     1
+    # 暂不需要处理该入参，写死即可
 
 """
 遍历指定路径下的所有图片，并转换成base64
